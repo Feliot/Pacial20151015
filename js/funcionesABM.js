@@ -1,11 +1,11 @@
-function Borrarvoto(idParametro)
+function Borrarusuario(idParametro)
 {
 	//alert(idParametro);
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{
-			queHacer:"BorrarVoto",
+			queHacer:"Borrarusuario",
 			id:idParametro	
 		}
 	});
@@ -19,7 +19,7 @@ function Borrarvoto(idParametro)
 	});	
 }
 
-function Editarvoto(idParametro)
+function Editarusuario(idParametro)
 {
     Mostrar('MostrarFormAlta');
 	//alert("Modificar");
@@ -27,18 +27,17 @@ function Editarvoto(idParametro)
 		url:"nexo.php",
 		type:"post",
 		data:{
-			queHacer:"TraerVoto",
+			queHacer:"Traerusuario",
 			id:idParametro	
 		}
 	});
 	funcionAjax.done(function(retorno){
-		var voto =JSON.parse(retorno);		
-		$("#id").val(voto.id);
-		$("#provincia").val(voto.provincia);
-        $("#localidad").val(voto.localidad);
-        $("#direccion").val(voto.direccion);
-		$("#candidato").val(voto.candidato);
-        if(voto.sexo == "F")
+		var usuario =JSON.parse(retorno);		
+		$("#id").val(usuario.id);
+		$("#nombre").val(usuario.nombre);
+        $("#correo").val(usuario.correo);
+        $("#clave").val(usuario.clave);
+        if(usuario.sexo == "F")
              $('input:radio[name="sexo"][value="F"]').prop('checked', true);
         else
             $('input:radio[name="sexo"][value="M"]').prop('checked', true);	
@@ -71,24 +70,21 @@ function VerEnMapa(prov, dire, loc, id)
 	});
 }
 
-function GuardarVoto()
+function Guardarusuario()
 {
         var id = $("#id").val()
-		var candidato=$("#candidato").val();
-		var provincia=$("#provincia").val();
-        var localidad=$("#localidad").val();
-        var direccion=$("#direccion").val();
-		var sexo=$('input:radio[name=sexo]:checked').val();
+		var nombre=$("#nombre").val();
+        var correo=$("#correo").val();
+        var clave=$("#clave").val();
+		//var sexo=$('input:radio[name=sexo]:checked').val();
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"POST",
 		data:{
-			queHacer:"GuardarVoto",
-			candidato:candidato,
-			provincia:provincia,
-            localidad:localidad,
-            direccion: direccion,
-			sexo:sexo,
+			queHacer:"Guardarusuario",
+			nombre:nombre,
+            correo:correo,
+            clave: clave,
             id: id
 		}
 	});

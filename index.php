@@ -37,7 +37,7 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a onclick="" class="btn">----</a></li>
+				<li><a onclick="MostarLogin()" class="btn">Ingreso</a></li>
 				<li><a onclick="" class="btn">----</a> </li>
 				<li><a onclick="" class="btn">----</a> </li>
 				
@@ -57,7 +57,7 @@
 		<article  class="post clearfix">
 
 			<header  >
-				<h1 class="post-title"><a href="#">AlumnoNombre.Apellido</a></h1>
+				<h1 class="post-title"><a href="#">German.Molina</a></h1>
 				<p class="post-meta"><time class="post-date" datetime="2011-05-08" pubdate>2015</time> <em>en</em> <a href="#">UTN FRA</a></p>
 			</header>
 			<hr>
@@ -96,7 +96,7 @@
 
 	<footer id="footer">
 	
-		<p>templete by <a href="http://www.octavio.com.ar">Octavio Villegas</a></p>
+		<p>templete by <a href="http://www.sarasa.com.ar">Molina German</a></p>
 
 	</footer>
 	<!-- /#footer --> 
