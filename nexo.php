@@ -1,11 +1,11 @@
 <?php 
 require_once("clases/AccesoDatos.php");
-require_once("clases/voto.php");
+require_once("clases/usuario.php");
 $queHago=$_POST['queHacer'];
 
 switch ($queHago) {
-	case 'votacion':
-		include("partes/formVotacion.php");
+	case 'alta':
+		include("partes/formalta.php");
 		break;
 	case 'desloguear':
 			include("php/deslogearDni.php");

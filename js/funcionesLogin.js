@@ -1,24 +1,26 @@
 function validarLogin()
 {
-		var varDni=$("#dni").val();
+		var varclave=$("#clave").val();
+		var varcorreo=$("#correo").val();
 		var recordar=$("#recordarme").is(':checked');
 
-$("#sidebar").html("<img src='imagenes/ajax-loader.gif' style='width: 30px;'/>");
+//$("#sidebar").html("<img src='imagenes/body-bg2.jpg' style='width: 30px;'/>");
 	
 
 	var funcionAjax=$.ajax({
-		url:"php/validarDni.php",
+		url:"php/validarusuario.php",
 		type:"post",
 		data:{
 			recordarme:recordar,
-			dni:varDni,
+			clave:varclave,
+			correo:varcorreo
 		}
 	});
 
 
 	funcionAjax.done(function(retorno){
 			if(retorno.trim()=="ingreso"){	
-				Mostrar('votacion');
+				Mostrar('alta');
 				//MostarLogin();
 			}
         else
@@ -35,7 +37,7 @@ $("#sidebar").html("<img src='imagenes/ajax-loader.gif' style='width: 30px;'/>")
 function deslogear()
 {	
 	var funcionAjax=$.ajax({
-		url:"php/deslogearDni.php",
+		url:"php/deslogearnombre.php",
 		type:"post"		
 	});
 	funcionAjax.done(function(retorno){

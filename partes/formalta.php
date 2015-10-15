@@ -9,25 +9,25 @@ session_start();
 if(isset($_SESSION['registrado'])){  ?>
     <div class="container">
 
-      <form  class="form-ingreso " onsubmit="GuardarVoto(); return false;">
+      <form  class="form-ingreso " onsubmit="Guardarusuario(); return false;">
         <h2 class="form-ingreso-heading">Votar</h2>
-        <label for="Provincia" class="sr-only" hidden>Provincia</label>
-                <input type="text" id="provincia" class="form-control" placeholder="Provincia" required="" autofocus="">
-        <label for="localidad" class="sr-only" hidden>Localidad</label>
-                <input type="text" id="localidad" class="form-control" placeholder="Localidad" required="" autofocus="">
-        <label for="direccion" class="sr-only" hidden>Provincia</label>
-                <input type="text" id="direccion" class="form-control" placeholder="Direccion" required="" autofocus="">
-        <select  id="candidato">
+        <label for="nombre" class="sr-only" hidden>nombre</label>
+                <input type="text" id="nombre" class="form-control" placeholder="nombre" required="" autofocus="">
+        <label for="correo" class="sr-only" hidden>correo</label>
+                <input type="email" id="correo" class="form-control" placeholder="correo" required="" autofocus="">
+        <label for="clave" class="sr-only" hidden>clave</label>
+                <input type="password" id="clave" class="form-control" placeholder="clave" required="" autofocus="">
+        <!--<select  id="candidato">
           <option value="Candidato1">Candidato 1</option>
           <option value="Candidato2">Candidato 2</option>
           <option value="Candidato3">Candidato 3</option>
-        </select>
+        </select> 
         <br>
           <label>
             <input type="radio" Name="sexo" id="sexo" value="M" checked>Masculino
             <input type="radio" Name="sexo" id="sexo" value="F">Femenino
           </label>
-          
+        cierro COMENTARIO -->
         <button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button>
         <input type="hidden" name="id" id="id" readonly>
       </form>

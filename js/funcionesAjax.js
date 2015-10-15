@@ -56,7 +56,7 @@ function Mostrar(queMostrar)
 
 function MostarLogin()
 {
-		//alert(queMostrar);
+		//alert('hola');
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",

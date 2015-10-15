@@ -2,17 +2,17 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/ingreso.css" rel="stylesheet">
 
- 
 <?php 
- 
 session_start();
 if(!isset($_SESSION['registrado'])){  ?>
     <div id="formLogin" class="container">
 
       <form  class="form-ingreso " onsubmit="validarLogin();return false;">
-        <h2 class="form-ingreso-heading">Ingrese su DNI</h2>
-        <label for="dni" class="sr-only">DNI</label>
-                <input type="number" id="dni" class="form-control" min="1000000" max="99000000" placeholder="DNI" required="" autofocus="" value="<?php  if(isset($_COOKIE['registro'])){echo $_COOKIE['registro'];}?>">
+        <h2 class="form-ingreso-heading">Ingrese su nombre</h2>
+        <label for="nombre" class="sr-only">nombre</label>
+                <!-- <input type="text" id="nombre" class="form-control" placeholder="nombre" required="" autofocus="" value=""> -->
+                <input type="email" id="correo" class="form-control" placeholder="correo" required="" autofocus="" value="<?php  if(isset($_COOKIE['registro'])){echo $_COOKIE['registro'];}?>">
+                <input type="password" id="clave" class="form-control" placeholder="clave" required="" autofocus="" value="<?php  if(isset($_COOKIE['registro2'])){echo $_COOKIE['registro2'];}?>">
         <div class="checkbox">
           <label>
             <input type="checkbox" id="recordarme" checked> Recordame
@@ -26,7 +26,7 @@ if(!isset($_SESSION['registrado'])){  ?>
 
     </div> <!-- /container -->
 
-  <?php }else{    echo"<h3>usted '".$_SESSION['registrado']."' esta logeado. </h3> <h4>DNI2'".$_SESSION['registrado2']."'</h4>";
+  <?php }else{    echo"<h3>usted '".$_SESSION['registrado']."' esta logeado. </h3> <h4>nombre2'".$_SESSION['registrado2']."'</h4>";
 
   ?>         
     <button onclick="deslogear()" class="btn btn-lg btn-danger btn-block" type="button"><span class="glyphicon glyphicon-off">&nbsp;</span>Deslogearme</button>
