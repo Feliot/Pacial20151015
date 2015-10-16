@@ -26,30 +26,26 @@ switch ($queHago) {
         
         include("partes/formMapa.php");
 		break;
-	case 'BorrarVoto':
-			$voto = new voto();
-			$voto->id=$_POST['id'];
-			$cantidad=$voto->Borrarvoto();
+	case 'Borrarusuario':
+			$usuario = new usuario();
+			$usuario->id=$_POST['id'];
+			$cantidad=$usuario->Borrarusuario();
 			echo $cantidad;
 
 		break;
-	case 'GuardarVoto':
+	case 'Guardarusuario':
             session_start();
-			$voto = new voto();
-			$voto->id=$_POST['id'];
-			$voto->dni=$_SESSION['registrado'];
-			$voto->candidato=$_POST['candidato'];
-			$voto->provincia=$_POST['provincia'];
-            $voto->localidad=$_POST['localidad'];
-            $voto->direccion=$_POST['direccion'];
-			$voto->sexo=$_POST['sexo'];
-			$cantidad=$voto->Guardarvoto();
+			$usuario = new usuario();
+			$usuario->correo=$_SESSION['registrado'];
+			$usuario->nombre=$_POST['nombre'];
+			$usuario->clave=$_SESSION['registrado2'];
+			$cantidad=$usuario->Guardarusuario();
 			echo $cantidad;
 
 		break;
-	case 'TraerVoto':
-			$voto = voto::TraerUnvoto($_POST['id']);		
-			echo json_encode($voto);
+	case 'Traerusuario':
+			$usuario = usuario::TraerUnusuario($_POST['id']);		
+			echo json_encode($usuario);
 
 		break;
     case 'guardarMarcadores':

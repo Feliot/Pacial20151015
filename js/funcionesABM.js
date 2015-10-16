@@ -1,12 +1,12 @@
 function Borrarusuario(idParametro)
 {
-	//alert(idParametro);
+	alert(idParametro);
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{
 			queHacer:"Borrarusuario",
-			id:idParametro	
+			Id:idParametro	
 		}
 	});
 	funcionAjax.done(function(retorno){
@@ -33,14 +33,10 @@ function Editarusuario(idParametro)
 	});
 	funcionAjax.done(function(retorno){
 		var usuario =JSON.parse(retorno);		
-		$("#id").val(usuario.id);
+		$("#Id").val(usuario.id);
 		$("#nombre").val(usuario.nombre);
         $("#correo").val(usuario.correo);
-        $("#clave").val(usuario.clave);
-        if(usuario.sexo == "F")
-             $('input:radio[name="sexo"][value="F"]').prop('checked', true);
-        else
-            $('input:radio[name="sexo"][value="M"]').prop('checked', true);	
+        $("#clave").val(usuario.clave)
         
 	});
 	funcionAjax.fail(function(retorno){
@@ -73,9 +69,9 @@ function VerEnMapa(prov, dire, loc, id)
 function Guardarusuario()
 {
         var id = $("#id").val()
-		var nombre=$("#nombre").val();
-        var correo=$("#correo").val();
-        var clave=$("#clave").val();
+		var nombre=$("#nombrealta").val();
+        var correo=$("#correoalta").val();
+        var clave=$("#clavealta").val();
 		//var sexo=$('input:radio[name=sexo]:checked').val();
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
@@ -84,8 +80,8 @@ function Guardarusuario()
 			queHacer:"Guardarusuario",
 			nombre:nombre,
             correo:correo,
-            clave: clave,
-            id: id
+            clave:clave,
+            id:id
 		}
 	});
 	funcionAjax.done(function(retorno){

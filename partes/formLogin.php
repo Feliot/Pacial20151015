@@ -8,10 +8,11 @@ if(!isset($_SESSION['registrado'])){  ?>
     <div id="formLogin" class="container">
 
       <form  class="form-ingreso " onsubmit="validarLogin();return false;">
-        <h2 class="form-ingreso-heading">Ingrese su nombre</h2>
-        <label for="nombre" class="sr-only">nombre</label>
+        <h2 class="form-ingreso-heading">Ingrese sus datos</h2>
+        <label for="nombreblb" class="sr-only">nombre</label>
                 <!-- <input type="text" id="nombre" class="form-control" placeholder="nombre" required="" autofocus="" value=""> -->
                 <input type="email" id="correo" class="form-control" placeholder="correo" required="" autofocus="" value="<?php  if(isset($_COOKIE['registro'])){echo $_COOKIE['registro'];}?>">
+        <label for="claveblb" class="sr-only">clave</label>
                 <input type="password" id="clave" class="form-control" placeholder="clave" required="" autofocus="" value="<?php  if(isset($_COOKIE['registro2'])){echo $_COOKIE['registro2'];}?>">
         <div class="checkbox">
           <label>

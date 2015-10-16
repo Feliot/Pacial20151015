@@ -12,11 +12,11 @@ if(isset($_SESSION['registrado'])){  ?>
       <form  class="form-ingreso " onsubmit="Guardarusuario(); return false;">
         <h2 class="form-ingreso-heading">Votar</h2>
         <label for="nombre" class="sr-only" hidden>nombre</label>
-                <input type="text" id="nombre" class="form-control" placeholder="nombre" required="" autofocus="">
+                <input type="text" id="nombrealta" class="form-control" placeholder="nombre" required="" autofocus="">
         <label for="correo" class="sr-only" hidden>correo</label>
-                <input type="email" id="correo" class="form-control" placeholder="correo" required="" autofocus="">
+                <input type="email" id="correoalta" class="form-control" placeholder="correo" required="" autofocus="">
         <label for="clave" class="sr-only" hidden>clave</label>
-                <input type="password" id="clave" class="form-control" placeholder="clave" required="" autofocus="">
+                <input type="password" id="clavealta" class="form-control" placeholder="clave" required="" autofocus="">
         <!--<select  id="candidato">
           <option value="Candidato1">Candidato 1</option>
           <option value="Candidato2">Candidato 2</option>

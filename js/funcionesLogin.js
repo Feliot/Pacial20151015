@@ -1,18 +1,17 @@
 function validarLogin()
 {
-		var varclave=$("#clave").val();
-		var varcorreo=$("#correo").val();
-		var recordar=$("#recordarme").is(':checked');
+	var varcorreo=$("#correo").val();
+	var varclave=$("#clave").val();
+		
+	var recordar=$("#recordarme").is(':checked');
 
-//$("#sidebar").html("<img src='imagenes/body-bg2.jpg' style='width: 30px;'/>");
-	
-
+alert(varcorreo);
 	var funcionAjax=$.ajax({
-		url:"php/validarusuario.php",
+		url:"php/validarUsuario.php",
 		type:"post",
 		data:{
-			recordarme:recordar,
-			clave:varclave,
+			recordarme:recordar, 
+			clave:varclave, 
 			correo:varcorreo
 		}
 	});
@@ -20,8 +19,8 @@ function validarLogin()
 
 	funcionAjax.done(function(retorno){
 			if(retorno.trim()=="ingreso"){	
-				Mostrar('alta');
-				//MostarLogin();
+				//Mostrar('alta');
+				MostarLogin();
 			}
         else
         {
@@ -37,7 +36,7 @@ function validarLogin()
 function deslogear()
 {	
 	var funcionAjax=$.ajax({
-		url:"php/deslogearnombre.php",
+		url:"php/deslogearusuario.php",
 		type:"post"		
 	});
 	funcionAjax.done(function(retorno){

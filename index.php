@@ -39,7 +39,7 @@
 			<ul id="main-nav" class="clearfix">
 				<li><a onclick="MostarLogin()" class="btn">Ingreso</a></li>
 				<li><a onclick="Mostrar('alta')" class="btn">Alta Usuario</a> </li>
-				<li><a onclick="" class="btn">----</a> </li>
+				<li><a onclick="Mostrar('MostrarGrilla')" class="btn">grilla</a> </li>
 				
 			</ul>
 			<!-- /#main-nav --> 

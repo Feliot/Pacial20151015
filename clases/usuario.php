@@ -1,7 +1,7 @@
 <?php
 class usuario
 {
-	public $id;
+	public $Id;
  	public $nombre;
   	public $correo;
   	public $clave;
@@ -9,8 +9,8 @@ class usuario
   	public function Borrarusuario()
 	 {
 	 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("CALL Borrarusuario($this->id)");
-				$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);		
+			$consulta =$objetoAccesoDato->RetornarConsulta("CALL Borrarusuario($this->Id)");
+				$consulta->bindValue(':Id',$this->Id, PDO::PARAM_INT);		
 				$consulta->execute();
 				return $consulta->rowCount();
 	 }
@@ -33,7 +33,7 @@ class usuario
 
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 			$consulta =$objetoAccesoDato->RetornarConsulta("
-				CALL Modificarusuario('$this->id', '$this->nombre','$this->correo', '$this->clave)");
+				CALL Modificarusuario('$this->Id', '$this->nombre','$this->correo', '$this->clave)");
 			return $consulta->execute();
 
 	 }
@@ -51,8 +51,8 @@ class usuario
 	 }
 	 public function Guardarusuario()
 	 {
-
-	 	if($this->id>0)
+	 	echo $this->Id;
+	 	if($this->Id>0)
 	 		{
 	 			$this->Modificarusuario();
 	 		}else {
@@ -70,10 +70,10 @@ class usuario
 			return $consulta->fetchAll(PDO::FETCH_CLASS, "usuario");		
 	}
 
-	public static function TraerUnusuario($id)
+	public static function TraerUnusuario($Id)
 	{
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnusuario('$id')");
+			$consulta =$objetoAccesoDato->RetornarConsulta("CALL TraerUnusuario('$Id')");
 			$consulta->execute();
 			$usuarioBuscado= $consulta->fetchObject('usuario');
 			return $usuarioBuscado;				
